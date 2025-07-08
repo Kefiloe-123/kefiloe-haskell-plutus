@@ -2,7 +2,7 @@ HC2T3 - Task 3: Immutable Variables
 
 ---
 
-### ✅ **Complete Haskell Example:**
+### ✅ **Correct Haskell Example (Immutable Variables):**
 
 ```haskell
 -- Immutable variable definitions
@@ -18,7 +18,7 @@ greeting = "Hello, Haskell!"
 isHaskellFun :: Bool
 isHaskellFun = True
 
--- Main function to display the values
+-- Main function to print the variables
 main :: IO ()
 main = do
     putStrLn ("My age is: " ++ show myAge)
@@ -29,7 +29,7 @@ main = do
 
 ---
 
-### ▶ Example Output:
+### ▶ **Correct Example Output:**
 
 ```
 My age is: 25
@@ -40,29 +40,62 @@ Is Haskell fun? True
 
 ---
 
-### 🔍 **Explanation of the Variable Types:**
+### ❌ **Incorrect Example (Trying to Modify a Variable):**
 
-| Variable Name  | Type     | Example Value     |
-| -------------- | -------- | ----------------- |
-| `myAge`        | `Int`    | 25                |
-| `piValue`      | `Double` | 3.14159           |
-| `greeting`     | `String` | "Hello, Haskell!" |
-| `isHaskellFun` | `Bool`   | True              |
+If you try to **redefine** a variable, like this:
+
+```haskell
+myAge :: Int
+myAge = 25
+
+-- Attempt to reassign
+myAge = 30
+```
+
+You will get an **error like this when compiling:**
+
+```
+error:
+    Multiple declarations of ‘myAge’
+    Declared at: your_file.hs:1:1
+                 your_file.hs:4:1
+```
+
+This means you **cannot redefine** or reassign `myAge`.
 
 ---
 
-### ✔ **How to Run the Program:**
+### 🔍 **Explanation:**
 
-1. Save as `ImmutableVars.hs`.
-2. Compile it using GHC:
+In Haskell:
+
+* Once a variable is defined, its value **cannot be changed.**
+* This is because Haskell is a **purely functional language** where variables represent **values**, not **mutable memory locations**.
+
+If you want a different value, you must **create a new variable with a different name**, e.g.:
+
+```haskell
+myAge :: Int
+myAge = 25
+
+newAge :: Int
+newAge = 30
+```
+
+---
+
+### ✔ **How to Run Correct Code:**
+
+1. Save as `ImmutableExample.hs`.
+2. Compile:
 
    ```bash
-   ghc ImmutableVars.hs
+   ghc ImmutableExample.hs
    ```
-3. Run the program:
+3. Run:
 
    ```bash
-   ./ImmutableVars
+   ./ImmutableExample
    ```
 
 ---

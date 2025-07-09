@@ -1,4 +1,4 @@
-
+HC8T4: Define a new type Employee using record syntax with fields name :: String and experienceInYears :: Float. Create an employee richard with 7.5 years of experience.
 
 
 ```haskell
